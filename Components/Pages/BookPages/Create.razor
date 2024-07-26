@@ -1,0 +1,51 @@
+﻿@page "/books/create"
+
+@using Microsoft.EntityFrameworkCore
+@using BlazorTasks.Models
+@inject IDbContextFactory<BlazorTasks.Data.BlazorTasksContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Create</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Book" OnValidSubmit="AddBook" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label> 
+                <InputText id="title" @bind-Value="Book.Title" class="form-control" /> 
+                <ValidationMessage For="() => Book.Title" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="author" class="form-label">Author:</label> 
+                <InputText id="author" @bind-Value="Book.Author" class="form-control" /> 
+                <ValidationMessage For="() => Book.Author" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/books">Back to List</a>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    public Book Book { get; set; } = new();
+
+    // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+    public async Task AddBook()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Book.Add(Book);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/books");
+    }
+}

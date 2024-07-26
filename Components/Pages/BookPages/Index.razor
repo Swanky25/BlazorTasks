@@ -1,0 +1,26 @@
+﻿@page "/books"
+
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using BlazorTasks.Models
+@inject IDbContextFactory<BlazorTasks.Data.BlazorTasksContext> DbFactory
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="books/create">Create New</a>
+</p>
+
+<QuickGrid Class="table" Items="DbFactory.CreateDbContext().Book">
+    <PropertyColumn Property="book => book.Id" />
+    <PropertyColumn Property="book => book.Title" />
+    <PropertyColumn Property="book => book.Author" />
+
+    <TemplateColumn Context="book">
+        <a href="@($"books/edit?id={book.Id}")">Edit</a> |
+        <a href="@($"books/details?id={book.Id}")">Details</a> |
+        <a href="@($"books/delete?id={book.Id}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
