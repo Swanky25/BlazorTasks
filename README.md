@@ -1,6 +1,6 @@
-****Project Overview****
+***Project Overview***
 
-**Setup Instructions**
+***Setup Instructions***
 
 To run this project, follow these steps:
 
@@ -16,7 +16,7 @@ Update the appsettings.json file with your local database configuration. Change 
 
 To use your local database name and ensure the database name is set to **BlazorTasksContext**.
 
-****Application Features****
+**Application Features**
 
 **Home Page**
 
@@ -25,7 +25,7 @@ Here is a screenshot of the home page:
 ![image](https://github.com/user-attachments/assets/d414f83a-e38e-4bf1-a551-241dc77f6798)
 
 
-****Task 1: Create a Simple Blazor Component****
+***Task 1: Create a Simple Blazor Component***
 
 Create a Blazor component named `Counter.razor` that implements a simple counter. The counter shouldhave the following features:
 
@@ -41,7 +41,7 @@ Initial count value of zero:
 Displaying the count value:
 ![image](https://github.com/user-attachments/assets/9a217e37-e500-4d4a-9fcd-2f8248d89491)
 
-****Task 2: Create a CRUD Application****
+***Task 2: Create a CRUD Application***
 
 Create a simple CRUD application to manage a list of books using Blazor and ASP.NET Core. The application should have the following features:
 
