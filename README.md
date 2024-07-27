@@ -66,10 +66,11 @@ Properties: Id, Title, and Author.
    Use the Edit link on the Index page to edit an existing book’s title and author.
    **Edit Page:**
 
-    ![image](https://github.com/user-attachments/assets/2f8cce59-7b00-4b21-8384-16b392a9bba3)
+    ![image](https://github.com/user-attachments/assets/66b7c152-7d01-4b11-922b-286355236f5e)
+
 
    **After editing:**
-   ![image](https://github.com/user-attachments/assets/a717fe10-2b27-45f5-b7dc-8e36be9fe8b7)
+  ![image](https://github.com/user-attachments/assets/da96860b-a628-4c9d-a065-e2996d8710b3)
 
 
    
