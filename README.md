@@ -8,7 +8,15 @@ To run this project, follow these steps:
 
 Clone the project repository to your local folder using Git.
 
+Using
+git clone <repository-url>
+cd <repository-directory>
+
 **Configure the Database Connection:**
+
+Set up the Environment using "dotnet restore" then apply the migrations using "dotnet ef database update."
+
+OR
 
 Update the appsettings.json file with your local database configuration. Change the line:
 
